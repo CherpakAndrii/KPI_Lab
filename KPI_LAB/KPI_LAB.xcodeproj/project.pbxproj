@@ -1,0 +1,81 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		FFD14EC62614E46D00FEF838 /* KPI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KPI.cpp; path = ../KPI.cpp; sourceTree = "<group>"; };
+		FFD14EC72614E46D00FEF838 /* Admin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Admin.h; path = ../Admin.h; sourceTree = "<group>"; };
+		FFD14EC82614E46D00FEF838 /* authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = authentication.h; path = ../authentication.h; sourceTree = "<group>"; };
+		FFD14EC92614E48D00FEF838 /* teacher.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = teacher.cpp; path = ../teacher.cpp; sourceTree = "<group>"; };
+		FFD14ECA2614E48D00FEF838 /* teacher.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = teacher.hpp; path = ../teacher.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		FFD14EBF2614E45E00FEF838 = {
+			isa = PBXGroup;
+			children = (
+				FFD14EC72614E46D00FEF838 /* Admin.h */,
+				FFD14EC82614E46D00FEF838 /* authentication.h */,
+				FFD14EC62614E46D00FEF838 /* KPI.cpp */,
+				FFD14EC92614E48D00FEF838 /* teacher.cpp */,
+				FFD14ECA2614E48D00FEF838 /* teacher.hpp */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		FFD14EC02614E45E00FEF838 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = FFD14EC32614E45E00FEF838 /* Build configuration list for PBXProject "kpi_lab" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFD14EBF2614E45E00FEF838;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		FFD14EC42614E45E00FEF838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FFD14EC52614E45E00FEF838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFD14EC32614E45E00FEF838 /* Build configuration list for PBXProject "kpi_lab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD14EC42614E45E00FEF838 /* Debug */,
+				FFD14EC52614E45E00FEF838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFD14EC02614E45E00FEF838 /* Project object */;
+}
