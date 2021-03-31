@@ -12,7 +12,7 @@ std::vector<std::string> split(std::string, char);
 
 
 int authentication() {
-	std::vector<std::vector <std::string>> accounts = readlines("accounts.txt");
+	std::vector<std::vector <std::string>> accounts = readlines("logData.csv");
 	std::string name, passw = "", inp_passw;
 	int access;
 	while (1) {

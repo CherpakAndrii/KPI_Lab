@@ -1,6 +1,0 @@
-Muha,13672,1,adm,0
-Bodnarchuk,25625,2,adm,0
-Sidorov,031286,2,adm,0
-Cherpak Andrii,78287,3,IP01,1
-NazarKharchuk,45245,3,IP01,1
-Khramchenko,548634,3,IP01,1
