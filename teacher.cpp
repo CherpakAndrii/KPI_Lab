@@ -1,4 +1,4 @@
-//
+/*
 //  teacher.cpp
 //  kpi_lab
 //
@@ -70,3 +70,4 @@ void teacher::addMark(string studentName, int mark) {
         }
     }
 }
+*/

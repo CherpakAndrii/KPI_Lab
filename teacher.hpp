@@ -1,4 +1,4 @@
-//
+/*
 //  teacher.hpp
 //  kpi_lab
 //
@@ -24,5 +24,4 @@ public:
     void addMark(string studentName, int mark);
     void watchMarks();
 };
-
-#endif /* teacher_hpp */
+*/

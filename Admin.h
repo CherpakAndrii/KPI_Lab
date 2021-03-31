@@ -13,8 +13,22 @@ class Admin {
         }
         return passw;
     }
+
+    double get_rating(string login) {
+        vector<vector <string>> data = readlines("rating.csv");
+        int sum = 0;
+        for (vector <string> line : data) {
+            if (line[0] == login) {
+                for (int i = 1; i < line.size(); i++) {
+                    sum += stoi(line[i]);
+                }
+                return sum / 100;
+            }
+        }
+    }
+
 public:
-    Admin(string p) {
+    Admin(string p = "") {
         path = p + "logData.csv";
     }
 
@@ -38,7 +52,7 @@ public:
     }
 
     void DelUser(string login) {
-        vector<string> files = {"logData.csv", "rating", "student_info"};
+        vector<string> files = {"logData.csv", "rating.csv", "student_info.csv"};
         for (string f : files) {
             vector<vector <string>> data = readlines(f);
             ofstream out_file(f);
@@ -53,12 +67,30 @@ public:
         }
     }
     
-    void ChangeGroup(string login, string group) {
-        vector<vector <string>> data = readlines("student_info");
-        ofstream out_file("student_info");
+    void ChangeGroup(string login) {
+        string group;
+        cout << "Enter the new group: "; cin >> group; cout << endl;
+        vector<vector <string>> data = readlines("student_info.csv");
+        ofstream out_file("student_info.csv");
         for (vector <string> line : data) {
             if (line[0] == login) {
-                out_file << line[0] << group << line[2] << endl;
+                out_file << line[0] << "," << group << "," << line[2] << endl;
+                continue;
+            }
+            for (int i = 0; i < line.size(); i++) {
+                out_file << line[i]; if (i < line.size() - 1) out_file << ",";
+            }
+            out_file << endl;
+        }
+        out_file.close();
+    }
+
+    void ChangeCourse(string login) {
+        vector<vector <string>> data = readlines("student_info.csv");
+        ofstream out_file("student_info.csv");
+        for (vector <string> line : data) {
+            if (line[0] == login and get_rating(login)>0.6) {
+                out_file << line[0] << "," << line[1] << "," << stoi(line[2])+1 << endl;
                 continue;
             }
             for (int i = 0; i < line.size(); i++) {
