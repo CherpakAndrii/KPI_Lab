@@ -42,4 +42,31 @@ void teacher::addMark(string studentName, int mark) {
         int k = rename(teka2, teka1);
         file2.close();
     }
+    
+    void watchMarks() {
+        ifstream inFile("rating.csv");
+        string s;
+        while (!inFile.eof()) {
+            getline(inFile,s);
+            cout << s;
+        }
+    }
+    
+    void watchMarks() {
+        ifstream inFile("rating.csv");
+        string s;
+        while (!inFile.eof()) {
+            getline(inFile,s);
+            cout << s;
+        }
+    }
+    
+    void watchInfo() {
+        ifstream inFile("students_info.csv");
+        string s;
+        while (!inFile.eof()) {
+            getline(inFile,s);
+            cout << s;
+        }
+    }
 }

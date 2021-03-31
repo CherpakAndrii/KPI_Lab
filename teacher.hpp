@@ -22,6 +22,7 @@ using namespace std;
 class Teacher {
 public:
     void addMark(string studentName, int mark);
+    void watchMarks();
 };
 
 #endif /* teacher_hpp */
