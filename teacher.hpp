@@ -1,6 +1,14 @@
+//
+//  teacher.hpp
+//  kpi_lab
+//
+//  Created by Anatoliy Khramchenko on 31.03.2021.
+//
+
 #ifndef teacher_hpp
 #define teacher_hpp
 
+#include <stdio.h>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -11,9 +19,9 @@
 
 using namespace std;
 
-class teacher {
+class Teacher {
 public:
-    void addMark (string nameStudent);
+    void addMark(string studentName, int mark);
 };
 
 #endif /* teacher_hpp */
