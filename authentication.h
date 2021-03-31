@@ -11,7 +11,7 @@ std::vector<std::vector <std::string>> readlines(std::string);
 std::vector<std::string> split(std::string, char);
 
 
-int authentication() {
+std::pair<string, int> authentication() {
 	std::vector<std::vector <std::string>> accounts = readlines("logData.csv");
 	std::string name, passw = "", inp_passw;
 	int access;
@@ -39,12 +39,12 @@ int authentication() {
 		else {
 			system("CLS");
 			std::cout << "\033[1;32mSuccess!\033[0m" << std::endl;
-			return access;
+			return {name, access};
 		}
 	}
 	std::cout << "\033[1;31mToo many attemptions! Try again later.\033[0m" << std::endl;
 	time_t t0 = clock(); while ((clock() - t0) / CLOCKS_PER_SEC < 4);
-	return 0;
+	return NULL;
 }
 
 std::vector<std::vector <std::string>> readlines(std::string name) {
