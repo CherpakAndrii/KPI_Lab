@@ -1,11 +1,5 @@
 #pragma once
-#include <string>
-#include <vector>
-#include <iostream>
-#include <fstream>
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
+#include "authentication.h"
 
 using namespace std;
 
@@ -25,10 +19,22 @@ public:
     }
 
     void AddUser(string login, string userType) {
+
         ofstream out_file(path, ios::out | ios::app);
-        string determinator = ",";
         int password = PasswordGeneration(8);
         out_file << login << "," << password << "," << userType;
+        out_file.close();
+        cout << login << " : " << password << endl;
+    }
+
+    void DelUser(string login) {
+        vector<vector <string>> accounts = readlines("logData.csv");
+        ofstream out_file(path);
+        for (vector <string> line : accounts) {
+            if (line[0] == login) continue;
+            for (int i = 0; i < line.size(); i++) { out_file << line[i]; if (i<line.size()-1) out_file << ",";
+            }
+        }
         out_file.close();
     }
 };
