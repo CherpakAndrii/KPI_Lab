@@ -24,7 +24,7 @@ namespace Project
             }
             return sb.ToString();
         }
-        public void AddUser(string login)
+        public void AddUser(string login, string userType)
         {
             if (!File.Exists(path))
             {
@@ -32,7 +32,7 @@ namespace Project
             }
             string determinator = ",";
             string password = PasswordGeneration(8);
-            string line = login + determinator + password;
+            string line = login + determinator + password + determinator + userType;
             File.AppendAllText(path, line.ToString() + Environment.NewLine);
         }
     }
