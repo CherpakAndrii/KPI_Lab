@@ -47,26 +47,6 @@ int authentication() {
 	return 0;
 }
 
-class User {
-	std::string name;
-	int access=3;
-	std::string group;
-	int course=1;
-	double rating;
-public:
-	std::string name() { return name; }
-	int access() { return access; }
-	std::string group() { return group; }
-	int course() { return course; }
-	void set_group(std::string g) {
-		if (authentication() == 1) group = g;
-	}
-	void next_course() {
-		if (authentication() == 1 and rating > 60) course++;
-	}
-	void new_rating();
-};
-
 std::vector<std::vector <std::string>> readlines(std::string name) {
 	std::ifstream f(name);
 	std::vector<std::vector <std::string>> lines;
@@ -74,6 +54,7 @@ std::vector<std::vector <std::string>> readlines(std::string name) {
 	while (!f.eof()) {
 		std::string line;
 		getline(f, line);
+		if (line == "") continue;
 		lines.push_back(split(line, ','));
 		count++;
 	}
