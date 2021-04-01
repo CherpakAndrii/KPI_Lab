@@ -37,6 +37,7 @@ public:
             getline(inFile, s);
             cout << s<< endl;
         }
+        inFile.close();
     }
     void watchInfo() {
         ifstream inFile("students_info.csv");
@@ -45,5 +46,6 @@ public:
             getline(inFile, s);
             cout << s << endl;
         }
+        inFile.close();
     }
 };
