@@ -100,4 +100,22 @@ public:
         }
         out_file.close();
     }
+    void watchMarks() {
+        ifstream inFile("rating.csv");
+        string s;
+        while (!inFile.eof()) {
+            getline(inFile, s);
+            cout << s << endl;
+        }
+        inFile.close();
+    }
+    void watchInfo() {
+        ifstream inFile("students_info.csv");
+        string s;
+        while (!inFile.eof()) {
+            getline(inFile, s);
+            cout << s << endl;
+        }
+        inFile.close();
+    }
 };

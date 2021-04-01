@@ -20,7 +20,7 @@ public:
         if (userType == 1) {
             cout << "Wellcome back, admin" << endl;
             Admin _admin("");
-            cout << "Enter a number to use your functional (1 - to add user; 2 - to delete; 3 - to change student's group; 4 - to change student's course): ";
+            cout << "Enter a number to use your functional (1 - to add user; 2 - to delete; 3 - to change student's group; 4 - to change student's course; 5 - to check someone's marks; 6 - to check group info): ";
             cin >> operation; cout << endl;
             switch (operation) {
             case 1:
@@ -45,6 +45,11 @@ public:
                 getline(cin, stud_login); cout << endl;
                 _admin.ChangeCourse(stud_login);
                 break;
+            case 5:
+                _admin.watchMarks();
+                break;
+            case 6:
+                _admin.watchInfo();
             default:
                 cout << "Incorrect input!" << endl;
             }
@@ -54,7 +59,7 @@ public:
             int mark;
             cout << "Wellcome back, teacher" << endl;
             Teacher _teacher(login);
-            cout << "Enter a number to use your functional (1 - to change student's marks; 2 - to check someone's marks): ";
+            cout << "Enter a number to use your functional (1 - to change student's marks; 2 - to check someone's marks; 3 - to check group info): ";
             cin >> operation; cout << endl;
             switch (operation) {
             case 1:
@@ -67,6 +72,10 @@ public:
             case 2:
                 _teacher.watchMarks();
                 break;
+            case 3:
+                _teacher.watchInfo();
+            default:
+                cout << "Incorrect input!" << endl;
             }
         }
         else if (userType == 3){
@@ -81,6 +90,8 @@ public:
             case 2:
                 _student.show_group_and_course();
                 break;
+            default:
+                cout << "Incorrect input!" << endl;
             }
 
         }
