@@ -80,6 +80,7 @@ public:
                         break;
                     case 3:
                         _teacher.watchInfo();
+                        break;
                     default:
                         cout << "Incorrect input!" << endl;
                     }

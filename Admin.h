@@ -16,7 +16,7 @@ class Admin {
 
     double get_rating(string login) {
         vector<vector <string>> data = readlines("rating.csv");
-        int sum = 0;
+        double sum = 0;
         for (vector <string> line : data) {
             if (line[0] == login) {
                 for (int i = 1; i < line.size(); i++) {
