@@ -40,14 +40,14 @@ public:
         out_file.close();
         cout << login << " : " << password << endl;
         if (userType == 3) {
-            ofstream out_file("students_info.csv", ios::out | ios::app);
+            ofstream out_file1("students_info.csv", ios::out | ios::app);
             cout << "Enter the group: "; cin >> group;
             cout << "\nEnter the course: "; cin >> course; cout << endl;
-            out_file << login << "," << group << "," << course << endl;
-            out_file.close();
-            ofstream out_file("rating.csv", ios::out | ios::app);
-            out_file << login << endl;
-            out_file.close();
+            out_file1 << login << "," << group << "," << course << endl;
+            out_file1.close();
+            ofstream out_file2("rating.csv", ios::out | ios::app);
+            out_file2 << login << endl;
+            out_file2.close();
         }
     }
 

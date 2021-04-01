@@ -1,8 +1,8 @@
-﻿#include "authentication.h"
-
+#include "User.h"
 #include <iostream>
 
 int main()
 {
-    std::cout << authentication();
+    User a(authentication());
+    a.Interface();
 }

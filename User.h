@@ -6,13 +6,17 @@
 
 using namespace std;
 class User {
-    Admin _admin;
-    Student _student;
-    Teacher _teacher;
+    int userType;
+    string login;
 
-    void Interface(pair<string, int> authentication) {
-        int operation, newUserType, userType = authentication.second;
-        string stud_login, login = authentication.first;
+public:
+    User(pair<string, int> p) {
+        login = p.first; userType = p.second;
+    }
+
+    void Interface() {
+        int operation, newUserType;
+        string stud_login;
         if (userType == 1) {
             cout << "Wellcome back, admin" << endl;
             Admin _admin("");
