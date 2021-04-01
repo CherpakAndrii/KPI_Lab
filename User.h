@@ -8,9 +8,44 @@ using namespace std;
 class User {
     int userType;
     string login;
+    pair<string, int> authentication() {
+        vector<vector <string>> accounts = readlines("logData.csv");
+        string name, passw = "", inp_passw;
+        int access;
+        while (1) {
+            cout << "Enter your nickname, please: "; getline(std::cin, name); std::cout << std::endl;
+            if (name == "exit") exit(0);
+            for (vector <string> ln : accounts) {
+                if (ln[0] == name) {
+                    passw = ln[1];
+                    access = std::stoi(ln[2]);
+                }
+            }
+            if (passw == "") std::cout << "\033[1;31mSuch account doesn't exist! Try again or print \033[1;35mexit\033[1;31m.\033[0m" << std::endl;
+            else {
+                system("CLS");
+                cout << "\033[1;32mSuccess!\033[0m" << endl;
+                break;
+            }
+        }
 
+        for (int i = 0; i < 3; i++) {
+            std::cout << "Enter your password, please: "; std::getline(std::cin, inp_passw); std::cout << std::endl;
+            if (inp_passw == "exit") exit(0);
+            else if (inp_passw != passw) std::cout << "\033[1;31mIncorrect password! Try again or print \033[1;35mexit\033[1;31m.\033[0m" << std::endl;
+            else {
+                system("CLS");
+                std::cout << "\033[1;32mSuccess!\033[0m" << std::endl;
+                return { name, access };
+            }
+        }
+        std::cout << "\033[1;31mToo many attemptions! Try again later.\033[0m" << std::endl;
+        time_t t0 = clock(); while ((clock() - t0) / CLOCKS_PER_SEC < 4);
+        return { name, 0 };
+    }
 public:
-    User(pair<string, int> p) {
+    User() {
+        pair<string, int> p = authentication();
         login = p.first; userType = p.second;
     }
 
@@ -32,6 +67,8 @@ public:
                         cout << "Enter type of the creating user: ";
                         cin >> newUserType; cout << endl;
                         _admin.AddUser(stud_login, newUserType);
+                        system("CLS");
+                        cout << "\033[1;32mSuccess!\033[0m" << endl;
                         break;
                     case 2:
                         cout << "Enter user's login: "; cin.ignore();
@@ -42,11 +79,15 @@ public:
                         cout << "Enter user's login: "; cin.ignore();
                         getline(cin, stud_login); cout << endl;
                         _admin.ChangeGroup(stud_login);
+                        system("CLS");
+                        cout << "\033[1;32mSuccess!\033[0m" << endl;
                         break;
                     case 4:
                         cout << "Enter user's login: "; cin.ignore();
                         getline(cin, stud_login); cout << endl;
                         _admin.ChangeCourse(stud_login);
+                        system("CLS");
+                        cout << "\033[1;32mSuccess!\033[0m" << endl;
                         break;
                     case 5:
                         _admin.watchMarks();
@@ -74,6 +115,8 @@ public:
                         cout << "Enter a mark: ";
                         cin >> mark; cout << endl;
                         _teacher.addMark(stud_login, mark);
+                        system("CLS");
+                        cout << "\033[1;32mSuccess!\033[0m" << endl; 
                         break;
                     case 2:
                         _teacher.watchMarks();
@@ -104,6 +147,7 @@ public:
                     default:
                         cout << "Incorrect input!" << endl;
                     }
+                    
                 }
             }
             else exit(0);
