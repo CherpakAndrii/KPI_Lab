@@ -21,7 +21,7 @@ public:
             if (userType == 1) {
                 cout << "Wellcome back, admin" << endl;
                 Admin _admin("");
-                cout << "Enter a number to use your functional (0 - to exit; 1 - to add user; 2 - to delete; 3 - to change student's group; 4 - to change student's course; 5 - to check someone's marks; 6 - to check group info): ";
+                cout << "Enter a number to use your functional (0 - to exit; 1 - to add user; 2 - to delete user; 3 - to change student's group; 4 - to change student's course; 5 - to check marks; 6 - to check group info): ";
                 cin >> operation; cout << endl;
                 switch (operation) {
                 case 0:
@@ -62,7 +62,7 @@ public:
                 int mark;
                 cout << "Wellcome back, teacher" << endl;
                 Teacher _teacher(login);
-                cout << "Enter a number to use your functional (0 - to exit; 1 - to change student's marks; 2 - to check someone's marks; 3 - to check group info): ";
+                cout << "Enter a number to use your functional (0 - to exit; 1 - to add student's marks; 2 - to check someone's marks; 3 - to check group info): ";
                 cin >> operation; cout << endl;
                 switch (operation) {
                 case 0:

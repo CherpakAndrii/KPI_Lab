@@ -52,7 +52,7 @@ public:
     }
 
     void DelUser(string login) {
-        vector<string> files = {"logData.csv", "rating.csv", "student_info.csv"};
+        vector<string> files = {"logData.csv", "rating.csv", "students_info.csv"};
         for (string f : files) {
             vector<vector <string>> data = readlines(f);
             ofstream out_file(f);
@@ -70,8 +70,8 @@ public:
     void ChangeGroup(string login) {
         string group;
         cout << "Enter the new group: "; cin >> group; cout << endl;
-        vector<vector <string>> data = readlines("student_info.csv");
-        ofstream out_file("student_info.csv");
+        vector<vector <string>> data = readlines("students_info.csv");
+        ofstream out_file("students_info.csv");
         for (vector <string> line : data) {
             if (line[0] == login) {
                 out_file << line[0] << "," << group << "," << line[2] << endl;
@@ -86,8 +86,8 @@ public:
     }
 
     void ChangeCourse(string login) {
-        vector<vector <string>> data = readlines("student_info.csv");
-        ofstream out_file("student_info.csv");
+        vector<vector <string>> data = readlines("students_info.csv");
+        ofstream out_file("students_info.csv");
         for (vector <string> line : data) {
             if (line[0] == login and get_rating(login)>0.6) {
                 out_file << line[0] << "," << line[1] << "," << stoi(line[2])+1 << endl;
