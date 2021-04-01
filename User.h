@@ -22,21 +22,27 @@ public:
             Admin _admin("");
             cout << "Enter a number to use your functional (1 - to add user; 2 - to delete; 3 - to change student's group; 4 - to change student's course): ";
             cin >> operation; cout << endl;
-            cout << "Enter user's login: ";
-            cin >> stud_login; cout << endl;
             switch (operation) {
             case 1:
+                cout << "Enter user's login: "; cin.ignore();
+                getline(cin, stud_login); cout << endl;
                 cout << "Enter type of the creating user: ";
                 cin >> newUserType; cout << endl;
                 _admin.AddUser(stud_login, newUserType);
                 break;
             case 2:
+                cout << "Enter user's login: "; cin.ignore();
+                getline(cin, stud_login); cout << endl;
                 _admin.DelUser(stud_login);
                 break;
             case 3:
+                cout << "Enter user's login: "; cin.ignore();
+                getline(cin, stud_login); cout << endl;
                 _admin.ChangeGroup(stud_login);
                 break;
             case 4:
+                cout << "Enter user's login: "; cin.ignore();
+                getline(cin, stud_login); cout << endl;
                 _admin.ChangeCourse(stud_login);
                 break;
             default:
@@ -50,10 +56,10 @@ public:
             Teacher _teacher(login);
             cout << "Enter a number to use your functional (1 - to change student's marks; 2 - to check someone's marks): ";
             cin >> operation; cout << endl;
-            cout << "Enter a student name:";
-            cin >> stud_login; cout << endl;
             switch (operation) {
             case 1:
+                cout << "Enter user's login: "; cin.ignore();
+                getline(cin, stud_login); cout << endl;
                 cout << "Enter a mark: ";
                 cin >> mark; cout << endl;
                 _teacher.addMark(stud_login, mark);
